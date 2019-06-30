@@ -5,7 +5,7 @@ if(env === "development") {
     URL = "http://localhost:4127"
 }
 
-export async function login(email,password) {
+export async function getLogin(email,password) {
     let data = await fetch(`${URL}/users/login`, {
         method: 'POST', 
         mode: 'cors', 
