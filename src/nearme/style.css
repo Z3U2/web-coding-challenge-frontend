@@ -1,0 +1,21 @@
+.like-dislike {
+  width : 100px!important;
+}
+
+@media only screen and (min-width: 400px) {
+  .like-dislike {
+        width : 150px!important;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+  .like-dislike {
+        width : 100px!important;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+  .like-dislike {
+        width : 80px!important;
+    }
+}

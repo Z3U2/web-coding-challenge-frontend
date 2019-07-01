@@ -1,6 +1,9 @@
 import React from 'react'
 import {getPositionPromise} from '../geo'
-import {getNearMe} from '../service'
+import {getNearMe, addPref} from '../service'
+import './style.css'
+
+import Shop from '../components/shop'
 
 export default class NearMe extends React.Component {
 
@@ -53,15 +56,28 @@ export default class NearMe extends React.Component {
 
         return (
             <div>
-                { shops && <ul>
+                { shops && <div className="row">
                     {
                         shops.map(shop => (
-                            <li key={shop._id}>
-                                Name : {shop.name}, Distance : {shop.dist}
-                            </li>
+                            <div key={shop._id} className="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                                <Shop {...shop} >
+                                    <button
+                                        className="btn btn-primary like-dislike"
+                                        style={{ float: 'right' }}
+                                        onClick={null}>
+                                        Like
+                                    </button>
+                                    <button
+                                        className="btn btn-danger like-dislike"
+                                        style={{ float: 'left' }}
+                                        onClick={null}>
+                                        Dislike
+                                    </button>
+                                </Shop>
+                            </div>
                         ))
                     }
-                </ul>}
+                </div>}
                 {
                     error && <p>
                         {error}
