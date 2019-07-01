@@ -32,11 +32,12 @@ nav {
 .card-img-top {
   margin: auto;
     width: 100%;
-    max-height: 250px;
+    height: 250px;
     object-fit: cover;
 }
 
 .card-title-wrapper {
+  padding-top: 5px;
   height : 60px;
 }
 
@@ -46,6 +47,11 @@ nav {
 
 .content {
   padding-bottom: 80px;
+}
+
+.card-body {
+    justify-content: space-between;
+    display: flex;
 }
 
 /* @media only screen and (min-width: 600px) {
