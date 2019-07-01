@@ -1,5 +1,5 @@
 import React from 'react'
-import { getPrefs } from '../service'
+import { getPrefs,deletePref } from '../service'
 import './style.css'
 
 import Shop from '../components/shop'
@@ -13,6 +13,8 @@ export default class Pref extends React.Component {
             prefs: null,
             error : ''
         }
+
+        this.remove = this.remove.bind(this)
     }
 
     componentDidMount() {
@@ -21,6 +23,17 @@ export default class Pref extends React.Component {
                 this.setState({ prefs })
             }
         )
+    }
+
+    async remove (e,id) {
+        try {
+            e.preventDefault()
+            await deletePref(id)
+            let prefs = await getPrefs()
+            this.setState({ prefs })
+        } catch (err) {
+            this.setState({ error: err.message })
+        }
     }
 
     render() {
@@ -37,7 +50,7 @@ export default class Pref extends React.Component {
                                 <Shop  {...pref}>
                                     <button
                                         className="btn btn-danger"
-                                        onClick={null}>
+                                        onClick={e => this.remove(e,pref._id)}>
                                         Remove
                                     </button>
                                 </Shop>
