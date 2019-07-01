@@ -1,5 +1,6 @@
 import React from 'react'
 import { Redirect } from 'react-router-dom'
+import './style.css'
 
 import { getLogin } from '../service'
 
@@ -49,7 +50,7 @@ export default class LogIn extends React.Component {
         }
 
         return (
-            <div>
+            <div className="login-parent">
                 <form action="" onSubmit={this.login}>
                     <div className="form-group">
                         <label htmlFor="exampleInputEmail1">Email address</label>
