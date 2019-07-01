@@ -19,6 +19,19 @@ function handleResponse(response) {
     }
 }
 
+export async function getMe() {
+    let response = await fetch(`${URL}/users/me`, {
+        method: 'GET',
+        mode: 'cors',
+        credentials: 'include',
+    })
+        .then(response => response.json());
+
+    let data = handleResponse(response)
+
+    return data
+}
+
 export async function getLogin(email,password) {
     let response = await fetch(`${URL}/users/login`, {
         method: 'POST', 
