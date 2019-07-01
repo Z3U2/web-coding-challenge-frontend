@@ -93,11 +93,12 @@ export async function deletePref(id) {
 }
 
 export async function getNearMe(lat,lng) {
-    let response = await fetch(`${URL}/shops/neame?lat=${lat}&lng=${lng}`, {
+    let response = await fetch(`${URL}/shops/nearme?lat=${lat}&lng=${lng}`, {
         method: 'GET',
         mode: 'cors',
         credentials: 'include'
     })
+    .then(response => response.json());
 
     let data = handleResponse(response)
 
