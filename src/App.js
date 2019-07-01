@@ -11,6 +11,7 @@ import SignUp from './signup/component'
 import NearMe from './nearme/component'
 import Pref from './pref/component'
 import Home from './home/component'
+import SignOut from './signout/component'
 
 class App extends React.Component {
   constructor(props) {
@@ -46,6 +47,7 @@ class App extends React.Component {
         <Switch>
           <ProtectedRoute path="/nearme/" exact user={this.state.user} component={NearMe} />
           <ProtectedRoute path="/prefs/" exact user={this.state.user} component={Pref} />
+          <ProtectedRoute path="/signout/" exact user={this.state.user} component={(props) => <SignOut user={this.state.user} setUser={this.setUser} {...props}/>} />
           <Route path="/" exact component={Home}/>
           <Route path="/login/" exact component={(props) => (<LogIn user={this.state.user} setUser={this.setUser} {...props} />)} />
           <Route path="/signup/" exact component={SignUp} />
