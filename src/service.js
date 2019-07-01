@@ -53,6 +53,19 @@ export async function getLogin(email,password) {
     return
 }
 
+export async function getLogout() {
+    let response = await fetch(`${URL}/users/logout`, {
+        method: 'GET',
+        mode: 'cors',
+        credentials: 'include',
+    })
+    .then(response => response.json());
+
+    handleResponse(response)
+
+    return
+}
+
 export async function getPrefs() {
     let response = await fetch(`${URL}/users/pref`, {
         method: 'GET',
