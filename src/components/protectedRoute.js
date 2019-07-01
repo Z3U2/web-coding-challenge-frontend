@@ -12,6 +12,21 @@ export default class ProtectedRoute extends React.Component {
             ...rest
         } = this.props
 
+        if (this.props.path === '/signout/') {
+            return (
+                <Route {...rest} render={(props) => (
+                    user !== null
+                        ? <Component {...props} />
+                        : <Redirect to={{
+                            pathname: '/',
+                            state: {
+                                from: props.location
+                            }
+                        }} />
+                )} />
+            )
+        }
+
         return (
             <Route {...rest} render={(props) => (
                 user !== null
