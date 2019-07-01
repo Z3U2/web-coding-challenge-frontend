@@ -1,0 +1,53 @@
+footer {
+  position: absolute;
+  width: 100%;
+  bottom: 0px;
+  height: 50px;
+  color: black;
+  background-color: #a384ff;
+  padding-top: 20px;
+  padding-left: 20px;
+}
+
+footer > p {
+  margin : 0;
+}
+
+nav {
+  background-color: #a384ff!important;
+  margin-bottom: 50px;
+}
+
+
+.navbar-brand {
+  color : black!important;
+}
+
+.shop {
+  height: 390px;
+  margin-bottom: 30px;
+  background-color: lavender;
+}
+
+.card-img-top {
+  margin: auto;
+    width: 100%;
+    max-height: 250px;
+    object-fit: cover;
+}
+
+.card-title-wrapper {
+  height : 60px;
+}
+
+
+
+.content {
+  padding-bottom: 80px;
+}
+
+/* @media only screen and (min-width: 600px) {
+  footer {
+    
+  }
+} */
