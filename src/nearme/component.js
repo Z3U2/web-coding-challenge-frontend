@@ -74,13 +74,13 @@ export default class NearMe extends React.Component {
                                 <Shop {...shop} >
                                     <button
                                         className="btn btn-primary like-dislike"
-                                        style={{ float: 'right' }}
+                                        style={{ order:2 }}
                                         onClick={e => this.like(e,shop._id)}>
                                         Like
                                     </button>
                                     <button
                                         className="btn btn-danger like-dislike"
-                                        style={{ float: 'left' }}
+                                        style={{ order:1 }}
                                         onClick={null}>
                                         Dislike
                                     </button>
