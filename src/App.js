@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import './App.css';
+import { getMe } from './service'
 
 import ProtectedRoute from './components/protectedRoute'
 import Header from './components/header'
@@ -24,6 +25,18 @@ class App extends React.Component {
 
   async setUser(user) {
     this.setState(prevState => ({ user }))
+  }
+
+  componentDidMount() {
+    getMe()
+      .then(data => {
+        this.setUser({
+          email: data.email
+        })
+      })
+      .catch(e => {
+        this.setState({ error: e.message })
+      })
   }
 
   render() {
