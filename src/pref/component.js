@@ -1,7 +1,7 @@
 import React from 'react'
 import { getPrefs } from '../service'
 
-export default class NearMe extends React.Component {
+export default class Pref extends React.Component {
 
     constructor(props) {
         super(props)
