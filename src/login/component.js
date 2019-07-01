@@ -16,7 +16,8 @@ export default class LogIn extends React.Component {
         }
     }
 
-    async login() {
+    async login(e) {
+        e.preventDefault()
         try {
             await getLogin(this.state.email,this.state.password)
             this.setUser({
@@ -47,16 +48,40 @@ export default class LogIn extends React.Component {
 
         return (
             <div>
-                <label>Email</label>
-                <input type="text" name="email" value={this.state.email} onChange={this.handleChange} />
-                <br/>
-                <label>Password</label>
-                <input type="password" name="password" value={this.state.password} onChange={this.handleChange} />
-                <br/>
-                <button onClick={this.login}>
-                    LogIn
-                </button>
-                {this.state.error && <p>{this.state.error}</p> }
+                <form action="" onSubmit={this.login}>
+                    <div className="form-group">
+                        <label htmlFor="exampleInputEmail1">Email address</label>
+                        <input 
+                            type="email" 
+                            className="form-control" 
+                            id="exampleInputEmail1" 
+                            name="email"
+                            value={this.state.email} 
+                            onChange={this.handleChange}
+                            aria-describedby="emailHelp" 
+                            placeholder="Enter email" />
+                        <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="exampleInputPassword1">Password</label>
+                        <input 
+                            type="password" 
+                            className="form-control" 
+                            name="password" 
+                            value={this.state.password} 
+                            onChange={this.handleChange} 
+                            id="exampleInputPassword1" 
+                            placeholder="Password" />
+                    </div>
+                    <button 
+                        type="submit" 
+                        className="btn btn-primary"
+                        >Log In</button>
+                </form>
+                {this.state.error && 
+                    <div className="alert alert-danger" role="alert">
+                        {this.state.error}
+                    </div>}
             </div>
         )
     }
