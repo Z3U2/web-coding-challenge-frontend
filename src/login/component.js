@@ -1,7 +1,7 @@
 import React from 'react'
 import { Redirect } from 'react-router-dom'
 
-import { getLogin } from '../service'
+import { getLogin, getMe } from '../service'
 
 export default class LogIn extends React.Component {
 
@@ -26,6 +26,18 @@ export default class LogIn extends React.Component {
         catch (e) {
             this.setState({ error: e.message })
         }
+    }
+
+    componentDidMount() {
+        getMe()
+        .then(data => {
+            this.setUser({
+                email: data.email
+            })
+        })
+        .catch(e => {
+            this.setState({ error: e.message })
+        })
     }
 
     handleChange = (e) => {
