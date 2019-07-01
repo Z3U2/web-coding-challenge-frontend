@@ -19,6 +19,7 @@ export default class NearMe extends React.Component {
         this.getLocation = this.getLocation.bind(this)
         this.updateShops = this.updateShops.bind(this)
         this.updateLocation = this.updateLocation.bind(this)
+        this.like = this.like.bind(this)
     }
 
     async getLocation() {
@@ -49,6 +50,16 @@ export default class NearMe extends React.Component {
         })
     }
 
+    async like (e,id) {
+        try {
+            e.preventDefault()
+            await addPref(id)
+            await this.getLocation()
+        } catch (err) {
+            this.setState({error: err.message})
+        }
+    }
+
     render() {
 
         const error = this.state.error
@@ -64,7 +75,7 @@ export default class NearMe extends React.Component {
                                     <button
                                         className="btn btn-primary like-dislike"
                                         style={{ float: 'right' }}
-                                        onClick={null}>
+                                        onClick={e => this.like(e,shop._id)}>
                                         Like
                                     </button>
                                     <button
