@@ -2,13 +2,6 @@ import React from 'react'
 
 export default class Shop extends React.Component {
 
-    async like() {
-
-    }
-
-    async dislike() {
-
-    }
 
     render() {
 
