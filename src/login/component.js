@@ -3,6 +3,8 @@ import { Redirect } from 'react-router-dom'
 
 import { getLogin } from '../service'
 
+import ErrorComp from '../components/error'
+
 export default class LogIn extends React.Component {
 
     constructor(props) {
@@ -78,10 +80,7 @@ export default class LogIn extends React.Component {
                         className="btn btn-primary"
                         >Log In</button>
                 </form>
-                {this.state.error && 
-                    <div className="alert alert-danger" role="alert">
-                        {this.state.error}
-                    </div>}
+                {this.state.error && <ErrorComp error={this.state.error}/>}
             </div>
         )
     }
