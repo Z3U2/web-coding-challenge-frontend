@@ -40,7 +40,9 @@ nav {
   height : 60px;
 }
 
-
+.alert.alert-danger {
+  margin-top: 30px;
+}
 
 .content {
   padding-bottom: 80px;
