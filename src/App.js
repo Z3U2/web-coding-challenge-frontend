@@ -4,7 +4,7 @@ import './App.css';
 import { getMe } from './service'
 
 import ProtectedRoute from './components/protectedRoute'
-import Header from './components/header'
+import Layout from './components/layout'
 
 import LogIn from './login/component'
 import SignUp from './signup/component'
@@ -42,7 +42,7 @@ class App extends React.Component {
   render() {
     return (
       <Router>
-        <Header user={this.state.user} />
+        <Layout user={this.state.user}>
         <Switch>
           <ProtectedRoute path="/nearme/" exact user={this.state.user} component={NearMe} />
           <ProtectedRoute path="/prefs/" exact user={this.state.user} component={Pref} />
@@ -55,6 +55,7 @@ class App extends React.Component {
           </div>
           )} />
         </Switch>
+        </Layout>
       </Router>
     )
   }
