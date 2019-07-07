@@ -52,7 +52,7 @@ class App extends React.Component {
               <ProtectedRoute path="/signout/" exact user={this.state.user} component={(props) => <SignOut user={this.state.user} setUser={this.setUser} {...props} />} />
               <Route path="/" exact component={Home} />
               <Route path="/login/" exact component={(props) => (<LogIn user={this.state.user} setUser={this.setUser} {...props} />)} />
-              <Route path="/signup/" exact component={SignUp} />
+              <Route path="/signup/" exact component={(props) => (<SignUp user={this.state.user} setUser={this.setUser} {...props} />)} />
               <Route render={() => (
                 <div>
                   404 Not Found
