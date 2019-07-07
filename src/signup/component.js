@@ -15,7 +15,9 @@ export default class LogIn extends React.Component {
         this.state = {
             email: '',
             password: '',
+            passwordConfirmation: '',
             error: '',
+            disabled: true,
         }
     }
 
@@ -42,6 +44,27 @@ export default class LogIn extends React.Component {
             prevState[field] = value
             return prevState
         });
+    }
+
+    handleConfirmation = (e) => {
+        let field = e.target.getAttribute('name')
+        let value = e.target.value
+        let pass = document.getElementById('exampleInputPassword1').value
+        if (pass !== value) {
+            this.setState(prevState => {
+                prevState[field] = value
+                prevState.error = 'Passwords do not match'
+                prevState.disabled = true
+                return prevState
+            });
+        } else {
+            this.setState(prevState => {
+                prevState[field] = value
+                prevState.error = ''
+                prevState.disabled = false
+                return prevState
+            }); 
+        }
     }
 
     render() {
@@ -79,9 +102,21 @@ export default class LogIn extends React.Component {
                             id="exampleInputPassword1"
                             placeholder="Password" />
                     </div>
+                    <div className="form-group">
+                        <label htmlFor="exampleInputPassword1">Password Confirmation</label>
+                        <input
+                            type="password"
+                            className="form-control"
+                            name="passwordConfirmation"
+                            value={this.state.passwordConfirmation}
+                            onChange={this.handleConfirmation}
+                            id="exampleInputPasswordConfirmation1"
+                            placeholder="Password Confirmation" />
+                    </div>
                     <button
                         type="submit"
                         className="btn btn-primary"
+                        disabled = {this.state.disabled}
                     >Sign Up</button>
                 </form>
                 {this.state.error && <ErrorComp error={this.state.error} />}
