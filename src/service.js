@@ -117,3 +117,24 @@ export async function getNearMe(lat,lng) {
 
     return data
 }
+
+export async function doSignUp(email, password) {
+    let response = await fetch(`${URL}/users/signup`, {
+        method: 'POST',
+        mode: 'cors',
+        cache: 'no-cache',
+        credentials: 'include',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            email,
+            password
+        }),
+    })
+        .then(response => response.json());
+
+    handleResponse(response)
+
+    return
+}
