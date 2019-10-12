@@ -1,10 +1,48 @@
+.btn-primary {
+  color : #fff;
+  background-color: #7076a5;
+  border-color: #4d537b;
+}
+.btn-primary:hover, .btn-primary:active, .btn-primary:focus {
+  color : #fff!important;
+  background-color: #4d537b!important;
+  border-color: #4d537b!important;
+}
+.btn-primary:focus, .btn-primary:active {
+  box-shadow: 0 0 0 0.2rem rgba(77, 83, 123, 0.5)!important;
+}
+.btn-danger {
+  color : #fff;
+  background-color: #a57076;
+  border-color: #7b4d53;
+}
+.btn-danger:hover, .btn-danger:active, .btn-danger:focus {
+  color : #fff!important;
+  background-color: #7b4d53!important;
+  border-color: #7b4d53!important;
+}
+.btn-danger:focus, .btn-danger:active {
+  box-shadow: 0 0 0 0.2rem rgba(123, 77, 83, 0.5)!important;
+}
+.btn-primary.disabled, .btn-primary:disabled {
+  color : #fff;
+  background-color: #9fa3c3;
+  border-color: #4d537b;
+}
+.btn-primary.disabled:hover, .btn-primary:disabled:hover {
+  color : #fff;
+  background-color: #9fa3c3!important;
+  border-color: #4d537b!important;
+}
+
+
 footer {
   position: absolute;
   width: 100%;
   bottom: 0px;
   height: 50px;
-  color: black;
-  background-color: #a384ff;
+  color: #fff;
+  background-color: #4d537b;
   padding-top: 20px;
   padding-left: 20px;
 }
@@ -14,17 +52,23 @@ footer > p {
 }
 
 nav {
-  background-color: #a384ff!important;
+  color: #fff;
+  background-color: #4d537b!important;
   margin-bottom: 50px;
 }
 
 
 .navbar-brand {
-  color : black!important;
+  color : #fff!important;
+}
+.nav-link {
+  color : #fff!important;
 }
 
 .shop {
-  height: 390px;
+  padding-top: 20px;
+  position: relative;
+  height: 410px;
   margin-bottom: 30px;
   background-color: lavender;
 }
@@ -37,8 +81,8 @@ nav {
 }
 
 .card-title-wrapper {
-  padding-top: 5px;
-  height : 60px;
+  text-align: center;
+  padding-top: 10px;
 }
 
 .alert.alert-danger {
@@ -50,6 +94,10 @@ nav {
 }
 
 .card-body {
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
     justify-content: space-between;
     display: flex;
 }
