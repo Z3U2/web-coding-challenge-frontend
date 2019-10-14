@@ -60,7 +60,13 @@ nav {
 
 .navbar-brand {
   color : #fff!important;
+  letter-spacing: 2px;
 }
+.navbar-brand>.fas {
+  font-size: 0.85rem;
+  transform: translateY(1px);
+}
+
 .nav-link {
   color : #fff!important;
 }
