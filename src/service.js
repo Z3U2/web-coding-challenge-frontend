@@ -3,6 +3,8 @@ let URL
 
 if(env === "development") {
     URL = "http://localhost:4127"
+} else {
+    URL = process.env.REACT_APP_NEARME_BACK_URL
 }
 
 function handleResponse(response) {
