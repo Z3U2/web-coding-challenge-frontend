@@ -62,9 +62,10 @@ nav {
   color : #fff!important;
   letter-spacing: 2px;
 }
-.navbar-brand>.fas {
-  font-size: 0.85rem;
-  transform: translateY(1px);
+.navbar-brand svg {
+  font-size: 0.91rem;
+  transform: rotate(360deg) translateY(0px)!important;
+  margin-right: 2px;
 }
 
 .nav-link {
