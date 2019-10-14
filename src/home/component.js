@@ -6,8 +6,8 @@ export default class Home extends React.Component {
     render() {
         return (
             <div className="jumbotron">
-                <i class="fas fa-map-marker-alt"></i>
-                <div class="welcome-text">
+                <i className="fa fa-map-marker"></i>
+                <div className="welcome-text">
                     <h1 className="display-4">Welcome to ShopList App !</h1>
                     <p className="lead">You can start browsing shops nearby.</p>
                 </div>

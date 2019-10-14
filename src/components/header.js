@@ -8,7 +8,7 @@ export default class Header extends React.Component {
         if (this.props.user) {
             return (
                 <nav className="navbar navbar-expand-lg navbar-light">
-                    <Link className="navbar-brand" to="/">Sh<i class="fas fa-map-marker-alt"></i>pList</Link>
+                    <Link className="navbar-brand" to="/">Sh<i className="fas fa-map-marker-alt"></i>pList</Link>
                     <ul className="navbar-nav">
                         <li className="nav-item">
                             <Link className="nav-link" to="/">Home</Link>
@@ -31,7 +31,7 @@ export default class Header extends React.Component {
 
         return (
             <nav className="navbar navbar-expand-lg navbar-light" >
-                <Link className="navbar-brand" to="/">Sh<i class="fas fa-map-marker-alt"></i>pList</Link>
+                <Link className="navbar-brand" to="/">Sh<i className="fas fa-map-marker-alt"></i>pList</Link>
                 <ul className="navbar-nav">
                     <li className="nav-item">
                         <Link className="nav-link" to="/">Home</Link>
