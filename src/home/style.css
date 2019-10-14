@@ -1,3 +1,37 @@
 .jumbotron {
     background-color: lavender;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.jumbotron>i {
+    font-size: 10rem;
+    color: #9fa3c3;
+    margin:auto;
+}
+/* .jumbotron h1 {
+    display: inline-block;
+} */
+/* .jumbotron p {
+    display: inline-block;
+} */
+
+.welcome-text {
+    border-bottom: solid 1px lightgray;
+    display: inline-block;
+    margin-bottom:1.5rem;
+    padding-bottom: 1rem;
+}
+
+@media only screen and (min-width: 500px) {
+    .jumbotron {
+        display: block;
+        text-align: left;
+    }
+    .welcome-text {
+        width: calc(100% - 10rem);
+    }
+    .jumbotron>i {
+        float: right;
+    }
 }
